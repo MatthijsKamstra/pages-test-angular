@@ -8,63 +8,63 @@ test ci/cd
 
 ## setup
 
+my "default" project init
+
 ```bash
-ng new pages-test-angular --routing true --style scss
-cd pages-test-angular
+ng new 98_pages --routing true --style scss
+cd 98_pages
 ng serve --open
 ```
 
-## ng build
-
-we are going to show a basic setup so...
-
-build the project:
+But if you need to generate directly into the root
 
 ```bash
-ng build
+ng new 98_pages  --routing true --style scss --directory ./
 ```
 
-you will get
+## GITHUB!!! (HUB)
 
-`dist/pages-test-angular`
-`dist/98_pages`
-`dist/[projectname]`
+import differance when using github vs gitlab
 
-## .gitlab-ci.yml
+### **(github)** build project
 
-`.gitlab-ci.yml`
+build project with correct "base-href" and in correct output folder
 
-```yml
-image: node:8.12.0
+```bash
+# build project
+ng build --output-path docs --base-href /[projectname]/
 
-pages:
-  cache:
-    paths:
-      - node_modules/
+# create a production build
+ng build --prod  --output-path docs --base-href /[projectname]/
 
-  stage: deploy
-  script:
-    - npm install -g @angular/cli@6.2.1
-    - npm install
-    - ng build
-    - mkdir -p public
-    - mv dist/[projectname]/* public/
-  artifacts:
-    paths:
-      - public
-  only:
-    - master
-    - pages
+# the literal version
+ng build --output-path docs --base-href /pages-test-angular/
 ```
 
-# change base href
+### **(github)** build project (optional)
 
+change `package.json`
+
+```json
+{
+  "name": "pages-test-angular",
+  "version": "0.0.0",
+  "scripts": {
+    "deploy": "ng build --output-path docs --base-href /pages-test-angular/ && cp docs/index.html docs/404.html && npm run git:deploy",
+    "git:deploy": "npm run git:commit && npm run git:push",
+    "git:commit": "git add -A . && git commit -a -m 'update docs'",
+    "git:push": "git push",
+
+...
 ```
-<base href>
 
-This guide works with a CLI-generated Angular application. If you are working manually, make sure that you have <base href="/"> in the <head> of your index.html file. This assumes that the app folder is the application root, and uses "/".
+Run next command, to generate and automaticly deploy to github
+
+```bash
+npm run deploy
 ```
 
-# resource
+## resource
 
-https://medium.com/@atiaxi/publishing-a-standalone-angular-app-on-gitlab-pages-b58458d2c94
+- (github) https://angular.io/guide/deployment
+- (github) https://medium.com/swlh/how-to-deploy-an-angular-app-to-github-pages-without-using-any-libraries-step-by-step-guide-cfe96fb0c879
