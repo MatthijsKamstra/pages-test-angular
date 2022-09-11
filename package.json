@@ -2,7 +2,7 @@
   "name": "pages-test-angular",
   "version": "0.0.0",
   "scripts": {
-    "deploy": "ng build --output-path docs --base-href /pages-test-angular/ && npm run git:deploy",
+    "deploy": "ng build --output-path docs --base-href /pages-test-angular/ && cp docs/index.html docs/404.html && npm run git:deploy",
     "git:deploy": "npm run git:commit && npm run git:push",
     "git:commit": "git add -A . && git commit -a -m 'update docs'",
     "git:push": "git push",
