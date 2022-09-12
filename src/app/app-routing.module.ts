@@ -12,7 +12,6 @@ import { testRoutes } from './route/test.route';
 
 const PRODUCT_ROUTES = [...productRoutes];
 const DEFAULT_ROUTES = [...defaultRoutes];
-
 const TEST_ROUTES = [...testRoutes];
 
 const routes: Routes = [
