@@ -1,0 +1,31 @@
+// .w-50p {
+//   width: 50%;
+// }
+
+/**
+width in percentage
+*/
+@for $i from 1 through 10 {
+  .w-#{$i * 10}p {
+    width: $i * 10%;
+  }
+  .w-#{$i * 10} {
+    width: $i * 10%;
+  }
+}
+
+/**
+tailwind ripoff: width in percentage with breakpoints
+*/
+@each $br, $value in $breakpoints {
+  @include respond-above($br) {
+    @for $i from 1 through 10 {
+      .#{$br}\:w-#{$i * 10}p {
+        width: $i * 10%;
+      }
+      .#{$br}\:w-#{$i * 10} {
+        width: $i * 10%;
+      }
+    }
+  }
+}

@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { NavComponent } from './component/nav/nav.component';
 import { HeroComponent } from './component/hero/hero.component';
@@ -18,6 +19,7 @@ import { StyleguideComponent } from './page/styleguide/styleguide.component';
 import { ColorsComponent } from './page/styleguide/colors/colors.component';
 import { TestPipe } from './_test/test.pipe';
 import { TestComponent } from './_test/test/test.component';
+import { CodeComponent } from './component/code/code.component';
 
 @NgModule({
   declarations: [
@@ -36,11 +38,13 @@ import { TestComponent } from './_test/test/test.component';
     StyleguideComponent,
     ColorsComponent,
     TestPipe,
-    TestComponent
+    TestComponent,
+    CodeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,64 @@
+footer {
+	border-top: 2px solid $grey-mid;
+	.container-footer {
+		.footer__icon {
+			width: 2.5rem;
+			height: auto;
+			margin-bottom: 0.62rem;
+			@include respond-above(md) {
+				margin-bottom: 0;
+			}
+		}
+
+		.footer__list {
+			list-style: none;
+			display: flex;
+			flex-direction: column;
+			@include respond-above(md) {
+				flex-direction: row;
+			}
+
+			//add blue-dark border to the first one of the links so that they all have the same line
+			.footer__item {
+				margin-top: 0.625rem;
+				margin-bottom: 0.625rem;
+				margin-left: 0;
+				&::before {
+					display: none;
+				}
+				@include respond-above(md) {
+					margin: 0;
+				}
+				.footer__link {
+					font-size: 14px;
+					line-height: 24px;
+					color: $blue-dark;
+					text-decoration: none;
+					font-family: $SourceSansPro-Regular;
+					display: block;
+					position: relative;
+					padding: 0.625rem;
+					@include respond-above(md) {
+						padding: 0 0.625rem;
+					}
+					&::after {
+						content: "";
+						background: $blue-dark;
+						position: absolute;
+						bottom: 25%;
+						left: 0;
+						height: 50%;
+						width: 1px;
+					}
+					&:hover {
+						color: $blue-dark;
+						text-decoration: underline;
+					}
+					&:focus {
+						color: $blue-dark;
+					}
+				}
+			}
+		}
+	}
+}

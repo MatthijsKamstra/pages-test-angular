@@ -2,7 +2,66 @@
 
 // scss map
 $colors: (
-    "black": $black
+  "purple": $purple,
+  "blue": $blue,
+  "red": $red,
+  "orange": $orange,
+  "orangered": $orangered,
+  "yellow": $yellow,
+  "offwhite": $offwhite,
+  "offblack": $offblack,
+  "pink": $pink,
+
+  "blue-dark": $blue-dark,
+  "green": $green,
+  "green-light": $green-light,
+  "grey-dark": $grey-dark,
+  "grey-mid": $grey-mid,
+  "grey-light": $grey-light,
+
+  "red-error": $red-error,
+  "red-light": $red-light,
+
+  "white": $white,
+  "gray": $gray,
+  "gray-light": $gray-light,
+  "gray-medium": $gray-medium,
+  "black": $black,
+
+  "brand-primary": $brand-primary,
+  "brand-secondary": $brand-secondary,
+  "primary": $primary,
+  "secondary": $secondary,
+  "tertiary": $tertiary,
+  "gray-01": $gray-01,
+  "gray-03": $gray-03,
+  "gray-04": $gray-04,
+
+  "success": $success,
+  "danger": $danger,
+  "warning": $warning,
+  "info": $info,
+
+  "gray-900": $gray-900,
+  "gray-600": $gray-400,
+  "gray-400": $gray-400,
+  "gray-300": $gray-300,
+
+  "accent-001": $accent-001,
+  "accent-002": $accent-002,
+  "accent-003": $accent-003,
+  "accent-004": $accent-004,
+  "accent-005": $accent-005,
+  "accent-006": $accent-006,
+
+  "red-transparent": $red-transparent,
+  "yellow-transparent": $yellow-transparent,
+  "blue-transparent": $blue-transparent,
+  "green-transparent": $green-transparent,
+
+  "blue-light": $blue-light,
+  "background": $background,
+  "notification-red": $notification-red,
 );
 
 /* backgrounds colors */
@@ -33,3 +92,28 @@ $colors: (
   }
 }
 
+/**
+Filters only work when image/svg is black
+*/
+// source: https://codepen.io/sosuke/pen/Pjoqqp
+.filter-yellow {
+  filter: invert(86%) sepia(23%) saturate(722%) hue-rotate(360deg) brightness(106%) contrast(106%);
+}
+.filter-white {
+  filter: invert(100%) sepia(100%) saturate(14%) hue-rotate(212deg) brightness(104%) contrast(104%);
+}
+.filter-black {
+  filter: invert(0%) sepia(82%) saturate(7427%) hue-rotate(22deg) brightness(97%) contrast(103%);
+}
+.filter-blue-dark {
+  filter: invert(13%) sepia(50%) saturate(3389%) hue-rotate(211deg) brightness(92%) contrast(112%);
+}
+.filter-green {
+  filter: invert(64%) sepia(62%) saturate(609%) hue-rotate(17deg) brightness(102%) contrast(88%);
+}
+.filter-green-light {
+  filter: invert(86%) sepia(21%) saturate(276%) hue-rotate(11deg) brightness(112%) contrast(91%);
+}
+.filter-red-error {
+  filter: invert(12%) sepia(67%) saturate(6989%) hue-rotate(358deg) brightness(91%) contrast(91%);
+}

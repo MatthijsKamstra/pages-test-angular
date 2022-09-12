@@ -1,0 +1,28 @@
+// overwrite the default values used in Bootstrap 5
+.container {
+	@include respond-above(lg) {
+		width: 1140px;
+	}
+}
+
+// container only used for debugging
+.container-placeholder {
+	position: relative;
+	border-top: 1px solid $gray;
+	transition: all $duration-500;
+	&:hover {
+		opacity: 0.5;
+	}
+	&:after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		content: "placeholder";
+		background-color: $yellow;
+		font-size: 10px;
+		padding: 0;
+		padding-left: 0.3125rem;
+		padding-right: 0.3125rem;
+		text-transform: uppercase;
+	}
+}

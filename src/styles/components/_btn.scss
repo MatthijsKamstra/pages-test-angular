@@ -1,0 +1,23 @@
+.btn-outline-secondary-ing {
+	color: #fff;
+	background-color: $orange;
+	border-color: $orange;
+	transition: all 0.3s;
+	&:hover {
+		color: $black;
+		background-color: $white;
+		border-color: $orange;
+	}
+	&:not(:disabled):active {
+		color: #fff;
+		background-color: $orange;
+		border-color: $orange;
+	}
+	&.disabled,
+	&:disabled {
+		color: #fff;
+		background-color: $color-black-15;
+		border-color: $color-black-15;
+		opacity: 1;
+	}
+}

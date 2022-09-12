@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
+// Model
+import { UserModel } from '../../models/user.model';
+
+// Service
+import { UsersService } from '../../service/users.service';
+
+
 @Component({
   selector: 'app-users-page',
   templateUrl: './users-page.component.html',
@@ -7,9 +14,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersPageComponent implements OnInit {
 
-  constructor() { }
+  users!: UserModel[];
 
-  ngOnInit(): void {
+  constructor(private usersService: UsersService) { }
+
+  getUsers(): void {
+    this.usersService.getUsers().subscribe(users => this.users = users);
+  }
+
+  ngOnInit() {
+    this.getUsers()
   }
 
 }

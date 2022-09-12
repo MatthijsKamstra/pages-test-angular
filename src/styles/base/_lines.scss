@@ -1,0 +1,13 @@
+hr {
+	height: 0.0625rem;
+	opacity: 1;
+	&.green {
+		color: $green;
+	}
+	&.blue-dark {
+		color: $blue-dark;
+	}
+	&.grey-mid {
+		color: $grey-mid;
+	}
+}

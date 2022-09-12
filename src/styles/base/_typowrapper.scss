@@ -1,0 +1,21 @@
+// test dynamic wrapper
+// change `$angular-root-id` to wrap scss for specific root id style name
+#{$angular-root-id} {
+  .companyLogo {
+    color: pink;
+    border: 1px solid pink;
+    background-color: black;
+  }
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

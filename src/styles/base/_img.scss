@@ -1,0 +1,18 @@
+/**
+this is an awefull idea.. but I need really big images
+and this way we have access to them in the correct size
+**/
+.img-full {
+  width: 100%;
+  height: auto;
+}
+
+.img-cover {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.img-rounded {
+  border-radius: 80px 80px 0 0;
+}
