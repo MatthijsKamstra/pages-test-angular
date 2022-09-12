@@ -24,8 +24,6 @@ ng new 98_pages  --routing true --style scss --directory ./
 
 ## GITHUB!!! (HUB)
 
-import differance when using github vs gitlab
-
 ### **(github)** build project
 
 build project with correct "base-href" and in correct output folder
