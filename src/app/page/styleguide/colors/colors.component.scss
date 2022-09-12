@@ -1,5 +1,11 @@
-@import "../../../../styles/default_import";
-@import "../../../../styles/base/colors";
+// @import "../../../../styles/default_import";
+// @import "../../../../styles/base/colors";
+
+// @import "../../../../styles/default_import";
+
+@import "../../../../styles/abstracts/vars_colors";
+@import "../../../../styles/abstracts/variables";
+// @import "../../../../styles/base/colors";
 
 .rounded-color {
 	width: 100px;
